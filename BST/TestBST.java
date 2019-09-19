@@ -21,7 +21,6 @@ public class TestBST
             test.insert(4);
             test.insert(5);
             test.insert(16);
-            
             //test preOrder =1, inOrder =2, postorder = 3 
             test.viewTree(1);
             test.viewTree(2);

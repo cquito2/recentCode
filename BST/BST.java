@@ -33,19 +33,79 @@ public class BST
    }
    
    
-   public void viewTree()
+   public void viewTree(int n)
    {
          if (root == null)
             System.out.println("This tree is empty");
             
           else 
           {
-               if ( root.getLeft() != null)
-                  System.out.println( root.getData() + " " + root.getLeft().getData());
+                Node temp = root; 
+                     
+                    if ( n ==1 )
+                    {
+                        System.out.println("preOrder");
+                        preOrderT(temp);
+                        }
+                    
+                    else if ( n == 2)
+                    {
+                        System.out.println("Inoder");
+                        inOrderT(temp);
+                     }
+                        
+                    else 
+                    {
+                        System.out.println("PostOrder");
+                        postOrderT(temp);
+                     }
+                        
                
           }
    
    }
+   
+   
+    private void inOrderT( Node print)
+   {
+            
+           if ( print  != null)
+           {
+                             
+            inOrderT(print.getLeft());
+            System.out.println(print.getData());
+            inOrderT(print.getRight());
+            }
+               
+   
+   }
+   private void preOrderT(Node print)
+   {
+      
+        if ( print  != null)
+           {
+            System.out.println(print.getData());                
+            preOrderT(print.getLeft());
+            preOrderT(print.getRight());
+            }
+   
+   
+   }
+   
+   private void postOrderT(Node print){
+   
+        
+        if ( print  != null)
+           {
+                  
+            postOrderT(print.getLeft());
+            
+            postOrderT(print.getRight());
+            System.out.println(print.getData());
+            }
+   
+   }
+
    
    
    // assume tree is not empty
